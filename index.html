@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Flores Mobiliario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Flores Mobiliario</h1>
+    <p>Muebles de oficina de calidad</p>
+</header>
+
+<nav>
+    <a href="#empresa">Empresa</a>
+    <a href="#cotizacion">Cotización</a>
+    <a href="#entrega">Entrega</a>
+</nav>
+
+<section id="empresa">
+    <div class="card">
+        <h2>Sobre Nosotros</h2>
+        <p>En Flores Mobiliario nos especializamos en la venta de muebles de oficina modernos, cómodos y funcionales. Nuestro objetivo es ofrecer soluciones prácticas para espacios de trabajo.</p>
+    </div>
+</section>
+
+<section id="cotizacion">
+    <div class="card">
+        <h2>Crear Cotización</h2>
+        <p>Selecciona un producto:</p>
+
+        <select id="producto">
+            <option value="1500">Escritorio - $1500</option>
+            <option value="800">Silla Ejecutiva - $800</option>
+            <option value="1200">Archivero - $1200</option>
+        </select>
+
+        <p>Cantidad:</p>
+        <input type="number" id="cantidad" value="1">
+
+        <br><br>
+        <button onclick="calcular()">Calcular Total</button>
+
+        <h3 id="resultado"></h3>
+    </div>
+</section>
+
+<section id="entrega">
+    <div class="card">
+        <h2>Formas de Entrega</h2>
+        <ul>
+            <li>Entrega a domicilio (costo adicional)</li>
+            <li>Recolección en tienda</li>
+            <li>Envíos nacionales</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Flores Mobiliario</p>
+</footer>
+
+<script>
+function calcular() {
+    let precio = document.getElementById("producto").value;
+    let cantidad = document.getElementById("cantidad").value;
+    let total = precio * cantidad;
+
+    document.getElementById("resultado").innerText = "Total: $" + total;
+}
+</script>
+
+</body>
+</html>
