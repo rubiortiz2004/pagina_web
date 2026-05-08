@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flores Mobiliario</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        :root{
+            --azul:#0b3d91;
+            --azul-oscuro:#062b66;
+            --azul-nav:#021f4d;
+            --blanco:#ffffff;
+            --gris:#f5f7fb;
+            --texto:#1c1c1c;
+            --sombra:0 10px 25px rgba(0,0,0,0.15);
+            --radio:18px;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:linear-gradient(180deg,#0b3d91,#07295f);
+            color:white;
+        }
+
+        /* HEADER */
+
+        header{
+            min-height:90vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:40px;
+            background:
+            linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+            url('https://images.unsplash.com/photo-1497366412874-3415097a27e7?q=80&w=1600&auto=format&fit=crop');
+            background-size:cover;
+            background-position:center;
+        }
+
+        .hero{
+            max-width:900px;
+        }
+
+        .hero h1{
+            font-size:70px;
+            margin-bottom:15px;
+            font-weight:700;
+        }
+
+        .hero p{
+            font-size:22px;
+            margin-bottom:30px;
+            color:#dbe7ff;
+        }
+
+        .hero button{
+            padding:15px 30px;
+            border:none;
+            border-radius:50px;
+            background:white;
+            color:var(--azul);
+            font-size:17px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .hero button:hover{
+            transform:translateY(-3px);
+            background:#dbe7ff;
+        }
+
+        /* NAV */
+
+        nav{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:rgba(2,31,77,0.95);
+            backdrop-filter:blur(10px);
+            padding:18px;
+            display:flex;
+            justify-content:center;
+            gap:35px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.25);
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-weight:500;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#8ec5ff;
+        }
+
+        /* SECCIONES */
+
+        section{
+            padding:80px 8%;
+        }
+
+        section h2{
+            font-size:42px;
+            margin-bottom:35px;
+            text-align:center;
+        }
+
+        /* TARJETAS */
+
+        .contenedor{
+            background:white;
+            color:var(--texto);
+            padding:40px;
+            border-radius:var(--radio);
+            box-shadow:var(--sombra);
+            line-height:1.9;
+        }
+
+        .info-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+            margin-top:30px;
+        }
+
+        .info-box{
+            background:var(--gris);
+            padding:25px;
+            border-radius:15px;
+        }
+
+        .info-box i{
+            color:var(--azul);
+            font-size:28px;
+            margin-bottom:10px;
+        }
+
+        /* CATALOGO */
+
+        .catalogo{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+        }
+
+        .producto{
+            background:white;
+            border-radius:var(--radio);
+            overflow:hidden;
+            color:var(--texto);
+            box-shadow:var(--sombra);
+            transition:0.35s;
+            position:relative;
+        }
+
+        .producto:hover{
+            transform:translateY(-8px);
+        }
+
+        .producto img{
+            width:100%;
+            height:240px;
+            object-fit:cover;
+        }
+
+        .producto-contenido{
+            padding:25px;
+        }
+
+        .producto h3{
+            margin-bottom:10px;
+            font-size:24px;
+        }
+
+        .producto p{
+            color:#555;
+            margin-bottom:15px;
+        }
+
+        .precio{
+            font-size:28px;
+            font-weight:700;
+            color:var(--azul);
+            margin-bottom:18px;
+        }
+
+        .producto button{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:var(--azul);
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+            font-weight:600;
+        }
+
+        .producto button:hover{
+            background:var(--azul-oscuro);
+        }
+
+        /* CARRITO */
+
+        #carrito{
+            margin-top:50px;
+            background:white;
+            color:var(--texto);
+            border-radius:var(--radio);
+            padding:35px;
+            box-shadow:var(--sombra);
+        }
+
+        #carrito h3{
+            margin-bottom:20px;
+            font-size:30px;
+        }
+
+        #lista-carrito{
+            list-style:none;
+        }
+
+        #lista-carrito li{
+            padding:12px;
+            margin-bottom:10px;
+            background:var(--gris);
+            border-radius:10px;
+        }
+
+        #total{
+            margin-top:25px;
+            font-size:28px;
+            font-weight:700;
+            color:var(--azul);
+        }
+
+        .acciones{
+            margin-top:20px;
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+        }
+
+        .acciones button{
+            flex:1;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:600;
+        }
+
+        .vaciar{
+            background:#d62828;
+            color:white;
+        }
+
+        .whatsapp{
+            background:#25D366;
+            color:white;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#021f4d;
+            padding:35px;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        footer p{
+            margin-top:10px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:45px;
+            }
+
+            .hero p{
+                font-size:18px;
+            }
+
+            nav{
+                flex-wrap:wrap;
+                gap:15px;
+            }
+
+            section{
+                padding:60px 6%;
+            }
+
+            section h2{
+                font-size:34px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <header>
+
+        <div class="hero">
+
+            <h1>Flores Mobiliario</h1>
+
+            <p>
+                Hacemos florecer tu espacio de trabajo con mobiliario moderno,
+                elegante y totalmente personalizado.
+            </p>
+
+            <a href="#catalogo">
+                <button>Ver Catálogo</button>
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- NAV -->
+
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#cotizacion">Cotización</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- NOSOTROS -->
+
+    <section id="nosotros">
+
+        <h2>Acerca De Nosotros</h2>
+
+        <div class="contenedor">
+
+            <p>
+                En <strong>Flores Mobiliario</strong> diseñamos espacios de trabajo
+                cómodos, modernos y funcionales.
+                Creamos escritorios, lockers y mobiliario personalizado
+                adaptado a las necesidades de cada cliente.
+            </p>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Ubicación</h3>
+                    <p>
+                        Fray Diego Ramírez #431<br>
+                        Fracc. Santo Domingo
+                    </p>
+                </div>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h3>Correo</h3>
+                    <p>gcpleon@hotmail.com</p>
+                </div>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>477 527 4379</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CATALOGO -->
+
+    <section id="catalogo">
+
+        <h2>Nuestro Catálogo</h2>
+
+        <div class="catalogo">
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="producto-contenido">
+
+                    <h3>Sillas De Oficina</h3>
+
+                    <p>
+                        Sillas ergonómicas modernas para mayor comodidad.
+                    </p>
+
+                    <div class="precio">$2,500 MXN</div>
+
+                    <button onclick="agregarCarrito('Silla De Oficina',2500)">
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="producto-contenido">
+
+                    <h3>Escritorios</h3>
+
+                    <p>
+                        Diseños elegantes y resistentes para oficina.
+                    </p>
+
+                    <div class="precio">$4,000 MXN</div>
+
+                    <button onclick="agregarCarrito('Escritorio',4000)">
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="producto-contenido">
+
+                    <h3>Personalizados</h3>
+
+                    <p>
+                        Fabricación a medida según tus necesidades.
+                    </p>
+
+                    <div class="precio">$6,500 MXN</div>
+
+                    <button onclick="agregarCarrito('Escritorio Personalizado',6500)">
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?q=80&w=1200&auto=format&fit=crop">
+
+                <div class="producto-contenido">
+
+                    <h3>Lockers</h3>
+
+                    <p>
+                        Lockers metálicos ideales para empresas y oficinas.
+                    </p>
+
+                    <div class="precio">$3,000 MXN</div>
+
+                    <button onclick="agregarCarrito('Locker',3000)">
+                        Añadir al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COTIZACION -->
+
+    <section id="cotizacion">
+
+        <h2>Crear Cotización</h2>
+
+        <div id="carrito">
+
+            <h3>
+                <i class="fa-solid fa-cart-shopping"></i>
+                Carrito De Cotización
+            </h3>
+
+            <ul id="lista-carrito"></ul>
+
+            <p id="total">Total: $0 MXN</p>
+
+            <div class="acciones">
+
+                <button class="vaciar" onclick="vaciarCarrito()">
+                    Vaciar carrito
+                </button>
+
+                <button class="whatsapp" onclick="enviarWhatsApp()">
+                    Enviar por WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section id="contacto">
+
+        <h2>Contáctanos</h2>
+
+        <div class="contenedor">
+
+            <p>
+                ¿Necesitas mobiliario personalizado?
+                Contáctanos y con gusto realizamos una cotización.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>Email:</strong> gcpleon@hotmail.com
+            </p>
+
+            <p>
+                <strong>Teléfono:</strong> 477 527 4379
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>Flores Mobiliario</h3>
+
+        <p>
+            © 2026 Todos los derechos reservados
+        </p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let total = 0;
+        let carrito = [];
+
+        function agregarCarrito(producto, precio){
+
+            carrito.push({producto,precio});
+
+            total += precio;
+
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito(){
+
+            let lista = document.getElementById("lista-carrito");
+
+            lista.innerHTML = "";
+
+            carrito.forEach((item,index)=>{
+
+                let li = document.createElement("li");
+
+                li.innerHTML = `
+                    ${item.producto} - $${item.precio.toLocaleString()} MXN
+                `;
+
+                lista.appendChild(li);
+
+            });
+
+            document.getElementById("total").innerHTML =
+            `Total: $${total.toLocaleString()} MXN`;
+        }
+
+        function vaciarCarrito(){
+
+            carrito = [];
+            total = 0;
+
+            actualizarCarrito();
+        }
+
+        function enviarWhatsApp(){
+
+            if(carrito.length === 0){
+
+                alert("Agrega productos al carrito primero.");
+                return;
+            }
+
+            let mensaje = "Hola, quiero solicitar una cotización:%0A%0A";
+
+            carrito.forEach(item=>{
+
+                mensaje += `• ${item.producto} - $${item.precio} MXN%0A`;
+
+            });
+
+            mensaje += `%0ATotal: $${total} MXN`;
+
+            let telefono = "524775274379";
+
+            window.open(
+                `https://wa.me/${telefono}?text=${mensaje}`,
+                "_blank"
+            );
+        }
+
+    </script>
+
+</body>
+</html>
