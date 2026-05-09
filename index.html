@@ -1,274 +1,77 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-:root{
-    --bg-color: #F4F1ED;
-    --primary-color: #2F4F4F;
-    --secondary-color: #A47551;
-    --black-color: #1E1E1E;
-}
-html{
-    font-size: 10px;
-}
-body{
-    background-color: var(--bg-color);
-    color: var(--black-color);
-}
-section{
-    margin-top: 4rem;
-}
-h2{
-    font-size: 4rem;
-    line-height: 1;
-    text-wrap: balance;
-    color: var(--primary-color);
-}
-p{
-    font-size: 1.6rem;
-    margin-top: 2rem;
-}
-img{
-    width: 100%;
-}
-header{
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-.header-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 8rem;
-    max-width: 120rem;
-    margin-inline: auto;
-}
-.logo-container{
-    width: 8rem;
-}
-nav ul{
-    display: flex;
-    gap: 2rem;
-}
-.header-nav ul li,
-.nav-footer ul li{
-    list-style: none;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-.max-content{
-    max-width: 120rem;
-    margin-inline: auto;
-}
-.hero-section{
-    margin-top: 0;
-    height: 100vh;
-    background: linear-gradient(to right, #0002 40%, transparent 60%), url("./img/hero-background.jpg");
-    background-size: cover;
-    background-position: bottom;
-}
-.hero-container{
-    height: 100vh;
-    align-content: center;
-}
-.hero-section h1{
-    font-size: 6rem;
-    max-width: 40%;
-    color: var(--primary-color);
-    text-wrap: balance;
-    line-height: 1;
-}
-.hero-container p{
-    max-width: 40%;
-    font-size: 1.4rem;
-}
-.link-default{
-    display: inline-block;
-    padding: 1.5rem 2rem;
-    text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: 500;
-    background-color: var(--secondary-color);
-    color: white;
-    margin-top: 4rem;
-    border: none;
-}
-.link-hero{
-    border: 2px solid var(--secondary-color);
-    background: none;
-    padding: 1rem 2rem;
-    margin-top: 1rem;
-    color: var(--black-color);
-}
-.brands-section{
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
-    gap: 6rem;
-    height: 8rem;
-    background-color: #fff;
-}
-.brands-section img{
-    object-fit: contain;
-    filter: grayscale(1);
-}
-.presentation-section{
-    display: flex;
-    gap: 4rem;
-    box-shadow: 0 0 1rem #0002;
-}
-.presentation-container-image{
-    flex-basis: 50%;
-    max-height: 50rem;
-}
-.presentation-container-image img{
-    object-fit: cover;
-    height: 100%;
-}
-.presentation-container-text{
-    flex-basis: 50%;
-    padding: 2rem;
-    align-content: center;
-}
-.presentation-max-content{
-    max-width: 70%;
-    margin-inline: auto;
-}
-.features-section{
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
-    padding: 2rem 0;
-}
-.feature-container svg{
-    display: block;
-    margin-inline: auto;
-}
-.feature-container h4{
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 1.8rem;
-}
-.feature-container p{
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 1.4rem;
-}
-.philosophy-section{
-    background-image: url("./img/image-2.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-    height: 50rem;
-    align-content: center;
-}
-.philosophy-container-text{
-    max-width: 50%;
-}
-.link-philosophy{
-    background-color: #728400;
-}
-.slider-product-section{
-    max-width: 110rem;
-    margin-inline: auto;
-    position: relative;
-    overflow: hidden;
-}
-.slider-container{
-    display: flex;
-    gap: 8rem;
-    padding: 4rem;
-    transition: transform .5s ease;
-}
-.arrow{
-    position: absolute;
-    top: calc(50% - 2rem);
-    border: none;
-    background-color: var(--secondary-color);
-    font-size: 3rem;
-    padding: 0 1.5rem .5rem;
-    color: white;
-    cursor: pointer;
-}
-.arrow-right{
-    right: 0;
-}
-.arrow-left{
-    left: 0;
-}
-.slide-product{
-    position: relative;
-    flex-basis: 100%;
-    flex-shrink: 0;
-    box-shadow: 0 0 10px #0002;
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    padding: 4rem;
-}
-.slide-container-image{
-    flex-basis: 40%;
-    flex-shrink: 0;
-}
-.slide-container-description{
-    flex-basis: 60%;
-    flex-shrink: 0;
-}
-.slide-container-description h3{
-    font-size: 2.2rem;
-}
-.slide-product-price{
-    font-size: 3rem;
-    font-weight: 900;
-    position: absolute;
-    top: -4rem;
-    right: 0;
-}
-.product-title{
-    text-align: center;
-}
-.products-container{
-    margin-top: 4rem;
-    display: flex;
-    gap: 8rem;
-}
-.product{
-    flex-basis: 33%;
-}
-.product-name{
-    text-align: center;
-    font-size: 1.8rem;
-}
-.product > ul > li{
-    font-size: 1.4rem;
-    font-weight: 500;
-    list-style: none;
-    line-height: 2;
-    text-align: center;
-}
-.product-price{
-    font-size: 3rem;
-    font-weight: 900;
-    text-align: center;
-}
-.link-product{
-    display: block;
-    width: max-content;
-    margin-inline: auto;
-}
-footer{
-    margin-top: 4rem;
-    padding: 2rem 8rem;
-    height: 8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #5555;
-    box-shadow: 0 0 1rem #0002;
-}
-.footer-container-logo{
-    width: 8rem;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muebles de Oficina - Flores Mobiliario</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Enlace a iconos (FontAwesome) para carrito y redes -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Header / Navegación -->
+    <header>
+        <div class="logo">OfiMueble</div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Catálogo</a></li>
+                <li><a href="#">Generar Cotizacion</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="iconos-nav">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </header>
+
+    <!-- Sección Hero / Banner Principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Diseña tu espacio de trabajo ideal</h1>
+            <p>Mobiliario ergonómico y moderno para aumentar tu productividad.</p>
+            <a href="#productos" class="btn">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Catálogo de Productos -->
+    <section id="productos" class="productos">
+        <h2>Nuestros Productos Destacados</h2>
+        <div class="grid-productos">
+            
+            <!-- Producto 1 -->
+            <div class="producto-card">
+                <img src="silla-ergonomica.jpg" alt="Silla Ergonómica">
+                <h3>Silla ErgoPro</h3>
+                <p class="precio">$250.00</p>
+                <button class="btn-comprar">Añadir al carrito</button>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="producto-card">
+                <img src="escritorio-nórdico.jpg" alt="Escritorio Nórdico">
+                <h3>Escritorio Nórdico</h3>
+                <p class="precio">$350.00</p>
+                <button class="btn-comprar">Añadir al carrito</button>
+            </div>
+            
+            <!-- Producto 3 -->
+            <div class="producto-card">
+                <img src="mesa-reuniones.jpg" alt="Mesa de Reuniones">
+                <h3>Mesa de Reuniones</h3>
+                <p class="precio">$500.00</p>
+                <button class="btn-comprar">Añadir al carrito</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 OfiMueble. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
