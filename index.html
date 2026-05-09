@@ -3,75 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muebles de Oficina - Flores Mobiliario</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Enlace a iconos (FontAwesome) para carrito y redes -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <title>Flores Mobiliario</title>
+
+    <!-- Fuente bonita -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            background-color:#0b3d91;
+            color:white;
+        }
+
+        /* ENCABEZADO */
+
+        header{
+            background:#062b66;
+            padding:25px;
+            text-align:center;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.4);
+        }
+
+        header h1{
+            font-size:50px;
+            color:white;
+            letter-spacing:2px;
+        }
+
+        header p{
+            font-size:18px;
+            margin-top:10px;
+        }
+
+        /* MENU */
+
+        nav{
+            background:#021f4d;
+            padding:15px;
+            text-align:center;
+            position:sticky;
+            top:0;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:20px;
+            font-size:18px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#8ec5ff;
+        }
+
+        /* SECCIONES */
+
+        section{
+            padding:50px;
+        }
+
+        h2{
+            margin-bottom:20px;
+            font-size:35px;
+        }
+
+        .contenedor{
+            background:white;
+            color:black;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* CATALOGO */
+
+        .catalogo{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+
+        .producto{
+            background:white;
+            color:black;
+            border-radius:15px;
+            overflow:hidden;
+            text-align:center;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.3);
+            transition:0.3s;
+        }
+
+        .producto:hover{
+            transform:scale(1.03);
+        }
+
+        .producto img{
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+
+        .producto h3{
+            margin-top:15px;
+        }
+
+        .producto p{
+            padding:10px;
+        }
+
+        .precio{
+            font-size:22px;
+            color:#0b3d91;
+            font-weight:bold;
+        }
+
+        button{
+            background:#0b3d91;
+            color:white;
+            border:none;
+            padding:12px 20px;
+            border-radius:10px;
+            margin-bottom:20px;
+            cursor:pointer;
+            font-size:16px;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#062b66;
+        }
+
+        /* CARRITO */
+
+        #carrito{
+            background:white;
+            color:black;
+            padding:25px;
+            border-radius:15px;
+            margin-top:30px;
+        }
+
+        #lista-carrito li{
+            margin:10px 0;
+        }
+
+        #total{
+            font-size:22px;
+            font-weight:bold;
+            margin-top:15px;
+            color:#0b3d91;
+        }
+
+        footer{
+            background:#021f4d;
+            text-align:center;
+            padding:20px;
+            margin-top:40px;
+        }
+
+    </style>
 </head>
+
 <body>
 
-    <!-- Header / Navegación -->
+    <!-- TITULO -->
+
     <header>
-        <div class="logo">OfiMueble</div>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#productos">Catálogo</a></li>
-                <li><a href="#">Generar Cotizacion</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-        <div class="iconos-nav">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-shopping-cart"></i>
-        </div>
+        <h1>Flores Mobiliario</h1>
+        <p>Hacemos florecer tu espacio de trabajo.</p>
     </header>
 
-    <!-- Sección Hero / Banner Principal -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Diseña tu espacio de trabajo ideal</h1>
-            <p>Mobiliario ergonómico y moderno para aumentar tu productividad.</p>
-            <a href="#productos" class="btn">Ver Catálogo</a>
+    <!-- MENU -->
+
+    <nav>
+        <a href="#nosotros">Acerca De Nosotros</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#cotizacion">Crear Cotización</a>
+    </nav>
+
+    <!-- ACERCA DE NOSOTROS -->
+
+    <section id="nosotros">
+
+        <h2>Acerca De Nosotros</h2>
+
+        <div class="contenedor">
+
+            <h3>Flores Mobiliario</h3>
+
+            <br>
+
+            <p>
+                Hacemos florecer tu espacio de trabajo.
+            </p>
+
+            <br>
+
+            <p>
+                En Flores Mobiliario, creemos que tu espacio de trabajo debe adaptarse a ti, y no al revés.
+                Nos apasiona transformar oficinas y áreas de trabajo en entornos productivos, cómodos y con estilo propio.
+            </p>
+
+            <br>
+
+            <p>
+                No creemos en las soluciones únicas. Por eso, nos especializamos en el diseño y la fabricación
+                de escritorios y mobiliario de oficina totalmente a la medida.
+            </p>
+
+            <br>
+
+            <p>
+                📍 Nos ubicamos en:
+                Fray Diego Ramirez #431 Fracc Santo Domingo
+            </p>
+
+            <br>
+
+            <p>
+                📧 Contacto:
+                gcpleon@hotmail.com
+            </p>
+
+            <p>
+                📞 Teléfono:
+                4775274379
+            </p>
+
         </div>
+
     </section>
 
-    <!-- Catálogo de Productos -->
-    <section id="productos" class="productos">
-        <h2>Nuestros Productos Destacados</h2>
-        <div class="grid-productos">
-            
-            <!-- Producto 1 -->
-            <div class="producto-card">
-                <img src="silla-ergonomica.jpg" alt="Silla Ergonómica">
-                <h3>Silla ErgoPro</h3>
-                <p class="precio">$250.00</p>
-                <button class="btn-comprar">Añadir al carrito</button>
+    <!-- CATALOGO -->
+
+    <section id="catalogo">
+
+        <h2>Catálogo</h2>
+
+        <div class="catalogo">
+
+            <!-- SILLA -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1200&auto=format&fit=crop" alt="Silla Oficina">
+
+                <h3>Sillas De Oficina</h3>
+
+                <p>
+                    Sillas ergonómicas y modernas ideales para oficina.
+                </p>
+
+                <p class="precio">$2,500</p>
+
             </div>
 
-            <!-- Producto 2 -->
-            <div class="producto-card">
-                <img src="escritorio-nórdico.jpg" alt="Escritorio Nórdico">
-                <h3>Escritorio Nórdico</h3>
-                <p class="precio">$350.00</p>
-                <button class="btn-comprar">Añadir al carrito</button>
+            <!-- ESCRITORIO -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="Escritorio">
+
+                <h3>Escritorios</h3>
+
+                <p>
+                    Escritorios elegantes y resistentes para cualquier espacio.
+                </p>
+
+                <p class="precio">$4,000</p>
+
             </div>
-            
-            <!-- Producto 3 -->
-            <div class="producto-card">
-                <img src="mesa-reuniones.jpg" alt="Mesa de Reuniones">
-                <h3>Mesa de Reuniones</h3>
-                <p class="precio">$500.00</p>
-                <button class="btn-comprar">Añadir al carrito</button>
+
+            <!-- PERSONALIZADOS -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop" alt="Escritorio Personalizado">
+
+                <h3>Escritorios Personalizados</h3>
+
+                <p>
+                    Diseños a la medida según las necesidades del cliente.
+                </p>
+
+                <p class="precio">$6,500</p>
+
+            </div>
+
+            <!-- LOCKERS -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?q=80&w=1200&auto=format&fit=crop" alt="Lockers">
+
+                <h3>Lockers</h3>
+
+                <p>
+                    Lockers metálicos ideales para oficinas y empresas.
+                </p>
+
+                <p class="precio">$3,000</p>
+
             </div>
 
         </div>
+
     </section>
 
-    <!-- Footer -->
+    <!-- CREAR COTIZACION -->
+
+    <section id="cotizacion">
+
+        <h2>Crear Cotización</h2>
+
+        <div class="catalogo">
+
+            <!-- PRODUCTO 1 -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1200&auto=format&fit=crop">
+
+                <h3>Sillas De Oficina</h3>
+
+                <p>Silla ergonómica de alta calidad.</p>
+
+                <p class="precio">$2,500</p>
+
+                <button onclick="agregarCarrito('Silla De Oficina',2500)">
+                    Añadir al carrito
+                </button>
+
+            </div>
+
+            <!-- PRODUCTO 2 -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop">
+
+                <h3>Escritorio</h3>
+
+                <p>Escritorio moderno de oficina.</p>
+
+                <p class="precio">$4,000</p>
+
+                <button onclick="agregarCarrito('Escritorio',4000)">
+                    Añadir al carrito
+                </button>
+
+            </div>
+
+            <!-- PRODUCTO 3 -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop">
+
+                <h3>Escritorio Personalizado</h3>
+
+                <p>Fabricado totalmente a la medida.</p>
+
+                <p class="precio">$6,500</p>
+
+                <button onclick="agregarCarrito('Escritorio Personalizado',6500)">
+                    Añadir al carrito
+                </button>
+
+            </div>
+
+            <!-- PRODUCTO 4 -->
+
+            <div class="producto">
+
+                <img src="https://images.unsplash.com/photo-1582582621959-48d27397dc69?q=80&w=1200&auto=format&fit=crop">
+
+                <h3>Lockers</h3>
+
+                <p>Lockers metálicos resistentes.</p>
+
+                <p class="precio">$3,000</p>
+
+                <button onclick="agregarCarrito('Locker',3000)">
+                    Añadir al carrito
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARRITO -->
+
+        <div id="carrito">
+
+            <h3>🛒 Carrito / Cotización</h3>
+
+            <ul id="lista-carrito"></ul>
+
+            <p id="total">
+                Total: $0
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
     <footer>
-        <p>&copy; 2026 OfiMueble. Todos los derechos reservados.</p>
+
+        <p>
+            © 2026 Flores Mobiliario | Todos los derechos reservados
+        </p>
+
     </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let total = 0;
+
+        function agregarCarrito(producto, precio){
+
+            let lista = document.getElementById("lista-carrito");
+
+            let item = document.createElement("li");
+
+            item.textContent = producto + " - $" + precio;
+
+            lista.appendChild(item);
+
+            total += precio;
+
+            document.getElementById("total").textContent =
+            "Total: $" + total;
+
+        }
+
+    </script>
 
 </body>
 </html>
